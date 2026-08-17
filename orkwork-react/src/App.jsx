@@ -4,6 +4,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Navbar from './components/navbar/navbar'
+import Home from './pages/home/home'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="orkwork-application">
       <Navbar />
+      <Home />
     </div>
   )
 }
