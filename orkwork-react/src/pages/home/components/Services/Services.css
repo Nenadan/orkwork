@@ -1,0 +1,106 @@
+.services-section {
+  --color-accent: #f2b705;
+  --color-heading: #0b0e14;
+  --color-muted: #6b7280;
+  --color-border: #f3f4f6;
+  padding: 5rem 1.5rem;
+}
+
+.services-container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* ===== Naslov ===== */
+.services-header {
+  text-align: center;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.services-heading {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: var(--color-heading);
+}
+
+@media (min-width: 640px) {
+  .services-heading {
+    font-size: 2.25rem;
+  }
+}
+
+.services-subtitle {
+  margin-top: 0.75rem;
+  color: var(--color-muted);
+}
+
+/* ===== Grid kartica ===== */
+.services-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* ===== Kartica ===== */
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ===== Ikonica u kružiću ===== */
+.service-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  background-color: rgba(242, 183, 5, 0.13);
+  margin: 0 auto 1.25rem;
+}
+
+/* Bitno: SVG je po defaultu "inline" element i sedi na baseline-u,
+   sto ga vizuelno pomera van centra kruga cak i kad je roditelj flex.
+   display:block na samom svg-u to definitivno resava. */
+.service-icon-circle svg {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #111827;
+}
+
+/* ===== Tekst kartice ===== */
+.service-title {
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.service-desc {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.625;
+}

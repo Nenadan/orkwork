@@ -1,6 +1,6 @@
 import React from 'react'
 import Hero from './components/Hero/Hero'
-import Services from './components/services'
+import Services from './components/Services/Services'
 import WhyUs from './components/whyus'
 import Gallery from './components/gallery'
 import Process from './components/process'

@@ -1,10 +1,6 @@
 import React from 'react';
 import { PaintRoller, Layers, Home, Sparkles, SprayCan } from 'lucide-react';
-
-const COLORS = {
-  accent: '#F2B705',
-  cream: '#FAF9F5',
-};
+import './Services.css';
 
 const SERVICES = [
   {
@@ -36,31 +32,23 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="usluge" className="py-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950">
-            Naše usluge
-          </h2>
-          <p className="mt-3 text-gray-500">
+    <section id="usluge" className="services-section">
+      <div className="services-container">
+        <div className="services-header">
+          <h2 className="services-heading">Naše usluge</h2>
+          <p className="services-subtitle">
             Nudimo kompletne molerske usluge za svaki prostor.
           </p>
         </div>
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="services-grid">
           {SERVICES.map(({ icon: Icon, title, desc }) => (
-            <div
-              key={title}
-              className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
-            >
-              <span
-                className="inline-flex items-center justify-center w-14 h-14 rounded-full mb-5"
-                style={{ backgroundColor: `${COLORS.accent}22` }}
-              >
-                <Icon className="w-6 h-6 text-gray-900" strokeWidth={1.75} />
+            <div key={title} className="service-card">
+              <span className="service-icon-circle">
+                <Icon strokeWidth={1.75} />
               </span>
-              <h3 className="font-bold text-gray-950">{title}</h3>
-              <p className="mt-2 text-sm text-gray-500 leading-relaxed">{desc}</p>
+              <h3 className="service-title">{title}</h3>
+              <p className="service-desc">{desc}</p>
             </div>
           ))}
         </div>
