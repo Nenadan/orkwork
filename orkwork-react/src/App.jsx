@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Navbar from './components/navbar/navbar'
 import Home from './pages/home/home'
+import Footer from './components/footer/footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +14,7 @@ function App() {
     <div className="orkwork-application">
       <Navbar />
       <Home />
+      <Footer />
     </div>
   )
 }

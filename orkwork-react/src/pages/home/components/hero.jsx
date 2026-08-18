@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Sparkles, ThumbsUp, ArrowRight, Phone } from 'lucide-react';
+import heroRoomLadderPhoto from '../../../assets/photos/hero-room-ladder.jpg'; 
 
 const COLORS = {
   accent: '#F2B705',
@@ -69,15 +70,12 @@ export default function Hero() {
               ))}
             </div>
           </div>
-
-          {/* Right column - image */}
           <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-200">
             <img
-              src="/images/hero-room.jpg"
+              src={heroRoomLadderPhoto}
               alt="Molerski radovi u toku - merdevine, boja i valjak u sobi"
               className="w-full h-full object-cover"
             />
-            {/* TODO: zamenite /images/hero-room.jpg vašom fotografijom prostora u radu */}
           </div>
         </div>
       </div>
