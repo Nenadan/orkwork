@@ -1,11 +1,16 @@
 import React from 'react';
+import gallery01 from '../../../../../assets/photos/gallery-01.jpg';
+import gallery02 from '../../../../../assets/photos/gallery-02.jpg';
+import gallery03 from '../../../../../assets/photos/gallery-03.jpg';
+import gallery04 from '../../../../../assets/photos/gallery-04.jpg';
+import gallery05 from '../../../../../assets/photos/gallery-05.jpg';
 
 const GALLERY_IMAGES = [
-  { src: '/images/gallery-1.jpg', alt: 'Okrečena dnevna soba' },
-  { src: '/images/gallery-2.jpg', alt: 'Žuti zid u dnevnoj sobi' },
-  { src: '/images/gallery-3.jpg', alt: 'Svetla dnevna soba nakon farbanja' },
-  { src: '/images/gallery-4.jpg', alt: 'Dekorativni sivi malter na zidu' },
-  { src: '/images/gallery-5.jpg', alt: 'Okrečena fasada kuće' },
+  { src: gallery01, alt: 'Okrečena dnevna soba' },
+  { src: gallery02, alt: 'Žuti zid u dnevnoj sobi' },
+  { src: gallery03, alt: 'Svetla dnevna soba nakon farbanja' },
+  { src: gallery04, alt: 'Dekorativni sivi malter na zidu' },
+  { src: gallery05, alt: 'Okrečena fasada kuće' },
 ];
 
 export default function Gallery() {
@@ -35,7 +40,6 @@ export default function Gallery() {
                 alt={img.alt}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
-              {/* TODO: zamenite putanju vašom stvarnom fotografijom radova */}
             </div>
           ))}
         </div>
