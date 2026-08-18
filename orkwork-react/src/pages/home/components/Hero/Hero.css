@@ -38,8 +38,12 @@
     background-size: cover;
   }
 
-  .hero-image-wrap {
+  .hero-image-wrap, .hero-paragraph {
     display: none;
+  }
+
+  .hero-heading {
+    padding: 30px 0px;
   }
 }
 

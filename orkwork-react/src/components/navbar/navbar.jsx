@@ -34,7 +34,7 @@ export default function Navbar() {
               <span className="block text-[11px] font-semibold tracking-[0.2em] text-gray-500">
                 Orkwork
               </span>
-              <span className="block text-lg font-extrabold tracking-tight text-gray-900 -mt-0.5">
+              <span className="block text-lg font-extrabold tracking-tight text-gray-700 -mt-0.5">
                 MOLERAJ
               </span>
             </span>
