@@ -12,15 +12,7 @@
 
 /* ===== Layout ===== */
 .hero-container {
-  max-width: 80rem; /* 1280px */
   margin: 0 auto;
-  padding: 4rem 1.5rem; /* 64px 24px */
-}
-
-@media (min-width: 1024px) {
-  .hero-container {
-    padding: 6rem 1.5rem; /* 96px 24px */
-  }
 }
 
 .hero-grid {
@@ -33,6 +25,21 @@
 @media (min-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr 1fr;
+    margin: 0rem 0rem 2rem 4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-grid {
+    padding: 20px;
+  }
+  .hero-container {
+    background-image: url('../../../../assets/photos/hero-room-ladder-gradient-mobile.png');
+    background-size: cover;
+  }
+
+  .hero-image-wrap {
+    display: none;
   }
 }
 
@@ -149,7 +156,6 @@
 /* ===== Slika ===== */
 .hero-image-wrap {
   position: relative;
-  border-radius: 1rem;
   overflow: hidden;
   aspect-ratio: 4 / 3;
   background-color: #e5e7eb;

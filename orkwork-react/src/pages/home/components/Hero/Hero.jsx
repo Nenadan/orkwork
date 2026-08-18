@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Sparkles, ThumbsUp, Phone } from 'lucide-react';
 import './Hero.css';
-import heroImg from '../../../../assets/photos/hero-room-ladder.jpg';
+import heroImg from '../../../../assets/photos/hero-room-ladder-gradient.png';
 
 const FEATURES = [
   {

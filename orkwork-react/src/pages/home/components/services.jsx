@@ -36,7 +36,7 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="usluge" style={{ backgroundColor: COLORS.cream }} className="py-20">
+    <section id="usluge" className="py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950">
