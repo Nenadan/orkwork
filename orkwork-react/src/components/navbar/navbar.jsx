@@ -32,10 +32,10 @@ export default function Navbar() {
             </span>
             <span className="leading-none">
               <span className="block text-[11px] font-semibold tracking-[0.2em] text-gray-500">
-                Orkwork
+                MOLERSKI RADOVI ORKWORK
               </span>
               <span className="block text-lg font-extrabold tracking-tight text-gray-700 -mt-0.5">
-                MOLERAJ
+                Stara Pazova
               </span>
             </span>
           </a>
