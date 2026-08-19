@@ -5,14 +5,14 @@ const CONTACT_ITEMS = [
   {
     icon: Phone,
     label: 'Telefon',
-    value: '063 456 789',
-    href: 'tel:063456789',
+    value: '061 135 1362',
+    href: 'tel:0611351362',
   },
   {
     icon: Mail,
     label: 'Email',
-    value: 'pazova.moleraj@gmail.com',
-    href: 'mailto:pazova.moleraj@gmail.com',
+    value: 'theywhereartist.notturtles@gmail.com',
+    href: 'mailto:theywhereartist.notturtles@gmail.com',
   },
   {
     icon: MapPin,

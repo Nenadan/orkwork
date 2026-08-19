@@ -45,7 +45,7 @@ export default function CTABanner() {
             <Phone className="w-5 h-5 text-gray-900" strokeWidth={1.75} />
           </span>
           <div>
-            <p className="font-bold text-gray-950">063 456 789</p>
+            <p className="font-bold text-gray-950">061 135 1362</p>
             <p className="text-xs text-gray-500">Pozovite nas svakog dana od 08h do 20h</p>
           </div>
         </div>

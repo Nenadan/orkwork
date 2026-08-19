@@ -118,19 +118,18 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0" />
-                063 456 789
+                061 135 1362
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0" />
-                pazova.moleraj@gmail.com
+                theywhereartist.notturtles@gmail.com
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-14 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
-          <p>© 2024 Pazova Moleraj. Sva prava zadržana.</p>
-          <p>Dizajn i izrada: Vaš Web Studio</p>
+          <p>© 2026 Orkwork. Sva prava zadržana.</p>
         </div>
       </div>
     </footer>

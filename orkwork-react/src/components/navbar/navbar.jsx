@@ -95,12 +95,12 @@ export default function Navbar() {
 
           {/* Phone CTA */}
           <a
-            href="tel:063456789"
+            href="tel:0611351362"
             className="hidden sm:flex items-center gap-2 rounded-full pl-4 pr-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.03]"
             style={{ backgroundColor: COLORS.dark }}
           >
             <Phone className="w-4 h-4" strokeWidth={2.25} />
-            063 456 789
+            061 135 1362
           </a>
 
           {/* Mobile toggle */}
@@ -133,12 +133,12 @@ export default function Navbar() {
               );
             })}
             <a
-              href="tel:063456789"
+              href="tel:0611351362"
               className="mt-2 flex items-center justify-center gap-2 rounded-full py-2.5 text-sm font-semibold text-white"
               style={{ backgroundColor: COLORS.dark }}
             >
               <Phone className="w-4 h-4" />
-              063 456 789
+              061 135 1362
             </a>
           </nav>
         </div>
