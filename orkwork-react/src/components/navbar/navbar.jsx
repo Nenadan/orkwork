@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { label: 'O nama', href: '#o-nama' },
   { label: 'Galerija', href: '#galerija' },
   { label: 'Proces', href: '#proces' },
-  { label: 'Kontakt', href: '#kontakt' },
+  { label: 'Kontakt', href: '#kontakt-informacije' },
 ];
 
 export default function Navbar() {
@@ -63,10 +63,10 @@ export default function Navbar() {
             </span>
             <span className="leading-none">
               <span className="block text-[11px] font-semibold tracking-[0.2em] text-gray-500">
-                PAZOVA
+                MOLERSKI RADOVI ORKWORK
               </span>
               <span className="block text-lg font-extrabold tracking-tight text-gray-900 -mt-0.5">
-                MOLERAJ
+                STARA PAZOVA
               </span>
             </span>
           </a>
