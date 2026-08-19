@@ -39,12 +39,9 @@ export default function Hero() {
             </p>
 
             <div className="hero-actions">
-              <a href="#kontakt" className="hero-btn hero-btn-primary">
-                ZATRAŽITE PONUDU
-              </a>
-              <a href="tel:063456789" className="hero-btn hero-btn-outline">
+              <a href="#kontakt-informacije" className="hero-btn hero-btn-primary">
                 <Phone className="hero-feature-icon" style={{ width: '1rem', height: '1rem', marginTop: 0 }} />
-                POZOVITE NAS
+                KONTAKTIRAJTE NAS
               </a>
             </div>
 
