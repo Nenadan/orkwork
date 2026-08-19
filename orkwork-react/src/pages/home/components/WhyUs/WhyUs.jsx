@@ -27,7 +27,7 @@ const REASONS = [
 
 export default function WhyUs() {
   return (
-    <section className="whyus-section">
+    <section className="whyus-section" id="o-nama">
       <div className="whyus-container">
         <div className="whyus-header">
           <h2 className="whyus-heading">Zašto baš mi?</h2>

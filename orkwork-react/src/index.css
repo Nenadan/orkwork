@@ -3,4 +3,8 @@
 html {
   scrollbar-width: none;
   -ms-overflow-style: none;
+    scroll-behavior: smooth;
+}
+[id] {
+  scroll-margin-top: 5rem; /* 80px - visina navbar-a, da sekcija ne "upadne" ispod sticky navbar-a kad skroluje do nje */
 }

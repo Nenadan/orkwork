@@ -51,10 +51,10 @@ export default function Footer() {
               </span>
               <span className="leading-none">
                 <span className="block text-[10px] font-semibold tracking-[0.2em] text-gray-400">
-                  PAZOVA
+                  MOLERSKI RADOVI ORKWORK
                 </span>
                 <span className="block text-base font-extrabold text-white -mt-0.5">
-                  MOLERAJ
+                  STARA PAZOVA
                 </span>
               </span>
             </div>
