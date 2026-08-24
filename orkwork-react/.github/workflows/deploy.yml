@@ -1,0 +1,41 @@
+name: Deploy to production
+
+on:
+  push:
+    branches: [main]
+
+# Neophodno za OIDC - dozvoljava workflow-u da zatrazi identity token od GitHub-a
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure AWS credentials (OIDC, bez trajnih kljuceva)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::019233111011:role/GitHub_Deploy_Custom_Role
+          aws-region: eu-central-1
+
+      - name: Upload to S3
+        run: aws s3 sync dist/ s3://orkwork.rs --delete
+
+      - name: Invalidate CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id E1013XFH3XJYW6 --paths "/*"
