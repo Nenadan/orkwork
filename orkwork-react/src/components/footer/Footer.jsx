@@ -44,7 +44,7 @@ export default function Footer() {
               </span>
               <span className="footer-wordmark">
                 <span className="footer-wordmark-small">MOLERSKI RADOVI ORKWORK</span>
-                <span className="footer-wordmark-bold">STARA PAZOVA</span>
+                <span className="footer-wordmark-bold footer-city-name">STARA PAZOVA</span>
               </span>
             </div>
             <p className="footer-desc">

@@ -139,6 +139,10 @@
   color: #ffffff;
 }
 
+.footer-city-name {
+  margin-top: 3px;
+}
+
 /* ===== Kontakt stavke ===== */
 .footer-contact-item {
   display: flex;
