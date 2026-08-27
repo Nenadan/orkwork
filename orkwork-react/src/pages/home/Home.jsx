@@ -5,6 +5,7 @@ import WhyUs from './components/WhyUs/WhyUs'
 import Gallery from './components/Hero/Gallery/Gallery'
 import Process from './components/process'
 import Contact from './components/Contact/Contact'
+import Testimonials from './components/Testimonials/Testimonials'
 
 export default function Home() {
     return(
@@ -12,6 +13,7 @@ export default function Home() {
             <Hero />
             <Services />
             <WhyUs />
+            <Testimonials />
             <Gallery />
             <Process />
             <Contact />
