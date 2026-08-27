@@ -34,8 +34,7 @@ export default function Hero() {
               Čisto. Kvalitetno.
             </h1>
             <p className="hero-paragraph">
-              Molerski radovi za domove, stanove i poslovne prostore u
-              Staroj Pazovi i okolini.
+              Molerski radovi za domove, stanove i poslovne prostore u Staroj Pazovi i okolini — gletovanje, krečenje i fasade, uredno i na vreme.
             </p>
             <div className="stat-row">
               <div className="stat">
