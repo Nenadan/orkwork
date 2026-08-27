@@ -1,0 +1,44 @@
+name: Deploy to development
+
+on:
+  push:
+    branches: [development]
+
+# Necessary for OIDC - allows the workflow to request an identity token from GitHub
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy-development:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: orkwork-react/package-lock.json
+
+      - name: Install dependencies
+        working-directory: orkwork-react
+        run: npm ci
+
+      - name: Build
+        working-directory: orkwork-react
+        run: npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::019233111011:role/GitHub_Deploy_Custom_Role
+          aws-region: eu-central-1
+
+      - name: Upload to S3
+        run: aws s3 sync orkwork-react/dist/ s3://dev.orkwork.rs --delete
+
+      - name: Invalidate CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id E2HETA0F6MI836 --paths "/*"
