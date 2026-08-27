@@ -26,6 +26,7 @@
     --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
     font-size: 26px;
     display: block;
+    font-variant-numeric: tabular-nums;
 }
 
 .stat-row .stat span {

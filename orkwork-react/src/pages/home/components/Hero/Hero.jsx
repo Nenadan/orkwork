@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ShieldCheck, Sparkles, ThumbsUp, Phone } from 'lucide-react';
 import './Hero.css';
 import heroImg from '../../../../assets/photos/hero-room-ladder-gradient.png';
@@ -21,6 +21,81 @@ const FEATURES = [
   },
 ];
 
+const STATS = [
+  { value: 5, suffix: '+', label: 'godina iskustva' },
+  { value: 80, suffix: '+', label: 'završenih radova' },
+  { value: 100, suffix: '%', label: 'poštovanje rokova' },
+];
+
+// Animira broj od 0 do target-a, samo kad je 'trigger' true (kad sekcija
+// udje u vidno polje) - ease-out krivulja, brzo krene pa uspori pred kraj.
+function useCountUp(target, trigger, duration = 1400) {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (!trigger) return;
+
+    let start = null;
+    let raf;
+
+    function step(timestamp) {
+      if (start === null) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(Math.round(eased * target));
+      if (progress < 1) raf = requestAnimationFrame(step);
+    }
+
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [trigger, target, duration]);
+
+  return value;
+}
+
+function Stat({ value, suffix, label, trigger }) {
+  const count = useCountUp(value, trigger);
+  return (
+    <div className="stat">
+      <b>
+        {count}
+        {suffix}
+      </b>
+      <span>{label}</span>
+    </div>
+  );
+}
+
+function StatRow() {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    if (!ref.current || inView) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect(); // animira se samo jednom
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [inView]);
+
+  return (
+    <div className="stat-row" ref={ref}>
+      {STATS.map((stat) => (
+        <Stat key={stat.label} {...stat} trigger={inView} />
+      ))}
+    </div>
+  );
+}
+
 export default function Hero() {
   return (
     <section id="pocetna" className="hero-section">
@@ -36,20 +111,8 @@ export default function Hero() {
             <p className="hero-paragraph">
               Molerski radovi za domove, stanove i poslovne prostore u Staroj Pazovi i okolini — gletovanje, krečenje i fasade, uredno i na vreme.
             </p>
-            <div className="stat-row">
-              <div className="stat">
-                <b>5+</b>
-                <span>godina iskustva</span>
-              </div>
-              <div className="stat">
-                <b>80+</b>
-                <span>završenih radova</span>
-              </div>
-              <div className="stat">
-                <b>100%</b>
-                <span>poštovanje rokova</span>
-              </div>
-            </div>
+
+            <StatRow />
 
             <div className="hero-actions">
               <a href="#kontakt-informacije" className="hero-btn hero-btn-primary">
