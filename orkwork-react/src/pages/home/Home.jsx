@@ -6,6 +6,7 @@ import Gallery from './components/Hero/Gallery/Gallery'
 import Process from './components/process'
 import Contact from './components/Contact/Contact'
 import Testimonials from './components/Testimonials/Testimonials'
+import ServiceAreas from './components/Serviceareas/ServiceAreas'
 
 export default function Home() {
     return(
@@ -16,6 +17,7 @@ export default function Home() {
             <Testimonials />
             <Gallery />
             <Process />
+            <ServiceAreas />
             <Contact />
         </div>
     )
