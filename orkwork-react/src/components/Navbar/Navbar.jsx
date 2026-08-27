@@ -46,51 +46,53 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="navbar-header">
-      <div className="navbar-container">
-        <div className="navbar-row">
-          {/* Logo */}
-          <a href="#pocetna" className="navbar-logo">
-            <span className="navbar-logo-circle">
-              <PaintRoller strokeWidth={2.25} />
-            </span>
-            <span className="navbar-wordmark">
-              <span className="navbar-wordmark-small">MOLERSKI RADOVI ORKWORK</span>
-              <span className="navbar-wordmark-bold">STARA PAZOVA</span>
-            </span>
-          </a>
+    <>
+      <header className="navbar-header">
+        <div className="navbar-container">
+          <div className="navbar-row">
+            {/* Logo */}
+            <a href="#pocetna" className="navbar-logo">
+              <span className="navbar-logo-circle">
+                <PaintRoller strokeWidth={2.25} />
+              </span>
+              <span className="navbar-wordmark">
+                <span className="navbar-wordmark-small">MOLERSKI RADOVI ORKWORK</span>
+                <span className="navbar-wordmark-bold">STARA PAZOVA</span>
+              </span>
+            </a>
 
-          {/* Desktop nav */}
-          <nav className="navbar-nav-desktop">
-            {NAV_LINKS.map((link) => {
-              const isActive = activeId === link.href.slice(1);
-              return (
-                <a key={link.label} href={link.href} className="navbar-link">
-                  {link.label}
-                  {isActive && <span className="navbar-link-underline" />}
-                </a>
-              );
-            })}
-          </nav>
+            {/* Desktop nav */}
+            <nav className="navbar-nav-desktop">
+              {NAV_LINKS.map((link) => {
+                const isActive = activeId === link.href.slice(1);
+                return (
+                  <a key={link.label} href={link.href} className="navbar-link">
+                    {link.label}
+                    {isActive && <span className="navbar-link-underline" />}
+                  </a>
+                );
+              })}
+            </nav>
 
-          {/* Phone CTA */}
-          <a href="tel:0611351362" className="navbar-phone-cta">
-            <Phone strokeWidth={2.25} />
-            061 135 1362
-          </a>
+            {/* Phone CTA */}
+            <a href="tel:0611351362" className="navbar-phone-cta">
+              <Phone strokeWidth={2.25} />
+              061 135 1362
+            </a>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="navbar-mobile-toggle"
-            aria-label="Otvori meni"
-          >
-            {open ? <X /> : <Menu />}
-          </button>
+            {/* Mobile toggle */}
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="navbar-mobile-toggle"
+              aria-label="Otvori meni"
+            >
+              {open ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - namerno VAN <header>, da njegov backdrop-filter ne blokira ovaj */}
       {open && (
         <div className="navbar-mobile-menu">
           <nav className="navbar-mobile-nav">
@@ -114,6 +116,6 @@ export default function Navbar() {
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }
