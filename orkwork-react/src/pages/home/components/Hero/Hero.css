@@ -69,8 +69,12 @@
     background-size: cover;
   }
 
-  .hero-image-wrap, .hero-paragraph {
+  .hero-image-wrap {
     display: none;
+  }
+  
+  .hero-paragraph {
+    margin-top: 0px !important;
   }
 
   .hero-heading {
