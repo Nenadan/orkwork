@@ -37,6 +37,20 @@ export default function Hero() {
               Molerski radovi za domove, stanove i poslovne prostore u
               Staroj Pazovi i okolini.
             </p>
+            <div className="stat-row">
+              <div className="stat">
+                <b>5+</b>
+                <span>godina iskustva</span>
+              </div>
+              <div className="stat">
+                <b>80+</b>
+                <span>završenih radova</span>
+              </div>
+              <div className="stat">
+                <b>100%</b>
+                <span>poštovanje rokova</span>
+              </div>
+            </div>
 
             <div className="hero-actions">
               <a href="#kontakt-informacije" className="hero-btn hero-btn-primary">
