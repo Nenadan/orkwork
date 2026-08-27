@@ -46,10 +46,17 @@
   align-items: center;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
   .hero-grid {
     grid-template-columns: 1fr 1fr;
     margin: 0rem 0rem 2rem 4rem;
+  }
+
+  .hero-image-wrap {
+    aspect-ratio: auto;
+    align-self: stretch;
+    height: 100%;
+    min-height: 26rem;
   }
 }
 
