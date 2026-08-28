@@ -1,13 +1,11 @@
 .navbar-header {
-    --color-accent: #f2b705;
-    --color-dark: #161616;
     position: sticky;
     top: 0;
     z-index: 50;
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid #f3f4f6;
+    border-bottom: 1px solid var(--color-border-light);
 }
 
 .navbar-container {
@@ -46,7 +44,7 @@
     display: block;
     width: 1.25rem;
     height: 1.25rem;
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .navbar-wordmark {
@@ -58,7 +56,7 @@
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.2em;
-    color: #6b7280;
+    color: var(--color-muted);
 }
 
 .navbar-wordmark-bold {
@@ -66,7 +64,7 @@
     font-size: 1.125rem;
     font-weight: 800;
     letter-spacing: -0.01em;
-    color: #111827;
+    color: var(--color-gray-900);
 }
 
 /* ===== Desktop navigacija ===== */
@@ -86,14 +84,14 @@
     position: relative;
     font-size: 0.875rem;
     font-weight: 500;
-    color: #374151;
+    color: var(--color-gray-700);
     text-decoration: none;
     padding-bottom: 0.25rem;
     transition: color 0.2s ease;
 }
 
 .navbar-link:hover {
-    color: #0b0e14;
+    color: var(--color-heading);
 }
 
 .navbar-link-underline {
@@ -115,7 +113,7 @@
     padding: 0.625rem 1.25rem 0.625rem 1rem;
     font-size: 0.875rem;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--color-white);
     background-color: var(--color-dark);
     text-decoration: none;
     transition: transform 0.15s ease;
@@ -145,7 +143,7 @@
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 0.5rem;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--color-gray-200);
     background: none;
     cursor: pointer;
 }
@@ -169,8 +167,8 @@
     left: 0;
     right: 0;
     z-index: 49;
-    border-top: 1px solid #f3f4f6;
-    border-bottom: 1px solid #f3f4f6;
+    border-top: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border-light);
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -193,7 +191,7 @@
 .navbar-mobile-link {
     font-size: 0.875rem;
     font-weight: 500;
-    color: #374151;
+    color: var(--color-gray-700);
     text-decoration: none;
 }
 

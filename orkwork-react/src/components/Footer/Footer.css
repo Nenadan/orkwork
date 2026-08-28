@@ -1,9 +1,6 @@
 .footer-section {
-  --color-accent: #f2b705;
-  --color-dark: #111113;
-
-  background-color: var(--color-dark);
-  color: #9ca3af;
+  background-color: var(--color-dark-alt);
+  color: var(--color-gray-400);
 }
 
 .footer-container {
@@ -53,7 +50,7 @@
   display: block;
   width: 1.25rem;
   height: 1.25rem;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .footer-wordmark {
@@ -65,14 +62,14 @@
   font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: 0.2em;
-  color: #9ca3af;
+  color: var(--color-gray-400);
 }
 
 .footer-wordmark-bold {
   display: block;
   font-size: 1rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--color-white);
   margin-top: -0.125rem;
 }
 
@@ -114,7 +111,7 @@
 
 /* ===== Kolone sa linkovima ===== */
 .footer-heading {
-  color: #ffffff;
+  color: var(--color-white);
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -136,7 +133,7 @@
 }
 
 .footer-link:hover {
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .footer-city-name {
@@ -168,7 +165,7 @@
   justify-content: space-between;
   gap: 0.75rem;
   font-size: 0.75rem;
-  color: #6b7280;
+  color: var(--color-muted);
   text-align: center;
 }
 

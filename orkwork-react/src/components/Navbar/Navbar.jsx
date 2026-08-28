@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Phone, Menu, X, PaintRoller } from 'lucide-react';
+import { BUSINESS } from '../../data/business';
 import './Navbar.css';
 
 const NAV_LINKS = [
@@ -75,9 +76,9 @@ export default function Navbar() {
             </nav>
 
             {/* Phone CTA */}
-            <a href="tel:0611351362" className="navbar-phone-cta">
+            <a href={BUSINESS.phoneHref} className="navbar-phone-cta">
               <Phone strokeWidth={2.25} />
-              061 135 1362
+              {BUSINESS.phone}
             </a>
 
             {/* Mobile toggle */}
@@ -109,9 +110,9 @@ export default function Navbar() {
                 </a>
               );
             })}
-            <a href="tel:0611351362" className="navbar-mobile-cta">
+            <a href={BUSINESS.phoneHref} className="navbar-mobile-cta">
               <Phone />
-              061 135 1362
+              {BUSINESS.phone}
             </a>
           </nav>
         </div>

@@ -1,5 +1,5 @@
-import React from 'react';
 import { Star } from 'lucide-react';
+import SectionHeading from '../../../../components/SectionHeading/SectionHeading';
 import './Testimonials.css';
 
 const TESTIMONIALS = [
@@ -33,12 +33,11 @@ export default function Testimonials() {
   return (
     <section className="testimonials-section">
       <div className="testimonials-container">
-        <div className="testimonials-header">
-          <h2 className="testimonials-heading">Šta kažu klijenti</h2>
-          <p className="testimonials-subtitle">
-            Nekoliko utisaka ljudi sa kojima smo sarađivali.
-          </p>
-        </div>
+        <SectionHeading
+          prefix="testimonials"
+          heading="Šta kažu klijenti"
+          subtitle="Nekoliko utisaka ljudi sa kojima smo sarađivali."
+        />
 
         <div className="testimonials-grid">
           {TESTIMONIALS.map(({ rating, quote, name, location, initials }) => (

@@ -1,5 +1,5 @@
-import React from 'react';
 import { PaintRoller, Layers, Home, Sparkles, SprayCan } from 'lucide-react';
+import SectionHeading from '../../../../components/SectionHeading/SectionHeading';
 import './Services.css';
 
 const SERVICES = [
@@ -34,12 +34,11 @@ export default function Services() {
   return (
     <section id="usluge" className="services-section">
       <div className="services-container">
-        <div className="services-header">
-          <h2 className="services-heading">Naše usluge</h2>
-          <p className="services-subtitle">
-            Nudimo kompletne molerske usluge za svaki prostor.
-          </p>
-        </div>
+        <SectionHeading
+          prefix="services"
+          heading="Naše usluge"
+          subtitle="Nudimo kompletne molerske usluge za svaki prostor."
+        />
 
         <div className="services-grid">
           {SERVICES.map(({ icon: Icon, title, desc }) => (

@@ -1,4 +1,3 @@
-import React from 'react';
 import gallery01 from '../../../../../assets/photos/gallery-01.jpg';
 import gallery02 from '../../../../../assets/photos/gallery-02.jpg';
 import gallery03 from '../../../../../assets/photos/gallery-03.jpg';
@@ -38,6 +37,7 @@ export default function Gallery() {
               <img
                 src={img.src}
                 alt={img.alt}
+                loading="lazy"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>

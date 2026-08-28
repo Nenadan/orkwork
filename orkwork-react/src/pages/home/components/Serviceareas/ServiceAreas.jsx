@@ -1,5 +1,5 @@
-import React from 'react';
 import { MapPin } from 'lucide-react';
+import SectionHeading from '../../../../components/SectionHeading/SectionHeading';
 import './ServiceAreas.css';
 
 const AREAS = ['Stara Pazova', 'Beograd', 'Novi Sad', 'Inđija', 'Ruma', 'Sremska Mitrovica'];
@@ -8,12 +8,11 @@ export default function ServiceAreas() {
   return (
     <section id="lokacije" className="areas-section">
       <div className="areas-container">
-        <div className="areas-header">
-          <h2 className="areas-heading">Mesta koja pokrivamo</h2>
-          <p className="areas-subtitle">
-            Naši moleri redovno rade u Staroj Pazovi i okolnim mestima.
-          </p>
-        </div>
+        <SectionHeading
+          prefix="areas"
+          heading="Mesta koja pokrivamo"
+          subtitle="Naši moleri redovno rade u Staroj Pazovi i okolnim mestima."
+        />
 
         <div className="areas-grid">
           {/* Leva strana - lista mesta */}

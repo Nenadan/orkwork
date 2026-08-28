@@ -1,5 +1,5 @@
-import React from 'react';
 import { PaintRoller, MapPin, Phone, Mail } from 'lucide-react';
+import { BUSINESS } from '../../data/business';
 import './Footer.css';
 
 // lucide-react v1.0+ je uklonio brend ikonice (Facebook, Instagram...),
@@ -95,15 +95,15 @@ export default function Footer() {
             <ul className="footer-list">
               <li className="footer-contact-item">
                 <MapPin />
-                Stara Pazova, Srbija
+                {BUSINESS.address}
               </li>
               <li className="footer-contact-item">
                 <Phone />
-                061 135 1362
+                {BUSINESS.phone}
               </li>
               <li className="footer-contact-item">
                 <Mail />
-                theywhereartist.notturtles@gmail.com
+                {BUSINESS.email}
               </li>
             </ul>
           </div>

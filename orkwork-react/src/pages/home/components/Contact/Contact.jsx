@@ -1,23 +1,23 @@
-import React from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { BUSINESS } from '../../../../data/business';
 
 const CONTACT_ITEMS = [
   {
     icon: Phone,
     label: 'Telefon',
-    value: '061 135 1362',
-    href: 'tel:0611351362',
+    value: BUSINESS.phone,
+    href: BUSINESS.phoneHref,
   },
   {
     icon: Mail,
     label: 'Email',
-    value: 'theywhereartist.notturtles@gmail.com',
-    href: 'mailto:theywhereartist.notturtles@gmail.com',
+    value: BUSINESS.email,
+    href: `mailto:${BUSINESS.email}`,
   },
   {
     icon: MapPin,
     label: 'Adresa',
-    value: 'Stara Pazova, Srbija',
+    value: BUSINESS.address,
     href: null,
   },
   {

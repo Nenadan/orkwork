@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+:root {
+  --color-accent: #f2b705;
+  --color-dark: #161616;
+  --color-dark-alt: #111113;
+  --color-cream: #faf9f5;
+  --color-heading: #0b0e14;
+  --color-muted: #6b7280;
+  --color-border: #d1d5db;
+  --color-border-light: #f3f4f6;
+  --color-white: #ffffff;
+  --color-gray-200: #e5e7eb;
+  --color-gray-400: #9ca3af;
+  --color-gray-700: #374151;
+  --color-gray-900: #111827;
+  --color-accent-dark: #8a6a05;
+}
+
 html {
   scrollbar-width: none;
   -ms-overflow-style: none;

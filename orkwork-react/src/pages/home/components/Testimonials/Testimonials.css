@@ -1,9 +1,5 @@
 .testimonials-section {
-  --color-accent: #f2b705;
-  --color-heading: #0b0e14;
-  --color-muted: #6b7280;
-
-  background-color: #ffffff;
+  background-color: var(--color-white);
   padding: 5rem 1.5rem;
 }
 
@@ -49,8 +45,8 @@
 }
 
 .testimonial-card {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
   border-radius: 0.75rem;
   padding: 1.5rem;
 }
@@ -72,7 +68,7 @@
 /* ===== Citat ===== */
 .testimonial-quote {
   font-size: 0.9375rem;
-  color: #374151;
+  color: var(--color-gray-700);
   line-height: 1.6;
 }
 
@@ -92,7 +88,7 @@
   height: 2.5rem;
   border-radius: 9999px;
   background-color: rgba(242, 183, 5, 0.18);
-  color: #8a6a05;
+  color: var(--color-accent-dark);
   font-size: 0.8125rem;
   font-weight: 700;
   flex-shrink: 0;

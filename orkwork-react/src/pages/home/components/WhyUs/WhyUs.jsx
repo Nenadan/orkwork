@@ -1,5 +1,5 @@
-import React from 'react';
 import { Award, ShieldCheck, HeartHandshake, Tag } from 'lucide-react';
+import SectionHeading from '../../../../components/SectionHeading/SectionHeading';
 import './WhyUs.css';
 
 const REASONS = [
@@ -29,10 +29,7 @@ export default function WhyUs() {
   return (
     <section className="whyus-section" id="o-nama">
       <div className="whyus-container">
-        <div className="whyus-header">
-          <h2 className="whyus-heading">Zašto baš mi?</h2>
-          <span className="whyus-underline" />
-        </div>
+        <SectionHeading prefix="whyus" heading="Zašto baš mi?" underline />
 
         <div className="whyus-grid">
           {REASONS.map(({ icon: Icon, title, desc }) => (

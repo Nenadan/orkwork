@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ShieldCheck, Sparkles, ThumbsUp, Phone } from 'lucide-react';
 import './Hero.css';
 import heroImg from '../../../../assets/photos/hero-room-ladder-gradient.png';
@@ -138,6 +138,7 @@ export default function Hero() {
               src={heroImg}
               alt="Molerski radovi u toku - merdevine, boja i valjak u sobi"
               className="hero-image"
+              fetchPriority="high"
             />
           </div>
         </div>
