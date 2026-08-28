@@ -80,7 +80,7 @@ function StatRow() {
           observer.disconnect(); // animira se samo jednom
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 },
     );
 
     observer.observe(ref.current);
@@ -109,14 +109,18 @@ export default function Hero() {
               Čisto. Kvalitetno.
             </h1>
             <p className="hero-paragraph">
-              Molerski radovi za domove, stanove i poslovne prostore u Staroj Pazovi i okolini — gletovanje, krečenje i fasade, uredno i na vreme.
+              Molerski radovi za domove, stanove i poslovne prostore u Staroj Pazovi i okolini —
+              gletovanje, krečenje i fasade, uredno i na vreme.
             </p>
 
             <StatRow />
 
             <div className="hero-actions">
               <a href="#kontakt-informacije" className="hero-btn hero-btn-primary">
-                <Phone className="hero-feature-icon" style={{ width: '1rem', height: '1rem', marginTop: 0 }} />
+                <Phone
+                  className="hero-feature-icon"
+                  style={{ width: '1rem', height: '1rem', marginTop: 0 }}
+                />
                 KONTAKTIRAJTE NAS
               </a>
             </div>

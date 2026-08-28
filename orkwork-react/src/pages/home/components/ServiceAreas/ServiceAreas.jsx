@@ -29,8 +29,8 @@ export default function ServiceAreas() {
             </ul>
 
             <p className="areas-note">
-              Niste sigurni da li pokrivamo vašu lokaciju? Pozovite nas —
-              dogovaramo se i za mesta van liste, u zavisnosti od obima posla.
+              Niste sigurni da li pokrivamo vašu lokaciju? Pozovite nas — dogovaramo se i za mesta
+              van liste, u zavisnosti od obima posla.
             </p>
           </div>
 

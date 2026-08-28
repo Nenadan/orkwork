@@ -33,12 +33,9 @@ export default function Contact() {
     <section id="kontakt-informacije" className="py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950">
-            Kontaktirajte nas
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950">Kontaktirajte nas</h2>
           <p className="mt-3 text-gray-500">
-            Tu smo za sva pitanja i ponude — javite nam se na način koji vama
-            odgovara.
+            Tu smo za sva pitanja i ponude — javite nam se na način koji vama odgovara.
           </p>
         </div>
 

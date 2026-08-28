@@ -1,6 +1,6 @@
-import Navbar from './components/Navbar/Navbar'
-import Home from './pages/home/Home'
-import Footer from './components/Footer/Footer'
+import Navbar from './components/Navbar/Navbar';
+import Home from './pages/home/Home';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Home />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

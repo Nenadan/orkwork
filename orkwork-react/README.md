@@ -1,16 +1,29 @@
-# React + Vite
+# orkwork-react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Single-page marketing site for Orkwork, built with React 19, Vite, and Tailwind CSS v4.
 
-Currently, two official plugins are available:
+## Getting started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Scripts
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `npm run dev` — start the Vite dev server with HMR
+- `npm run build` — type-check-free production build to `dist/`
+- `npm run preview` — preview the production build locally
+- `npm run lint` — run ESLint
+- `npm run format` — format the codebase with Prettier
 
-## Expanding the ESLint configuration
+## Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/components/` — shared components used across pages (`Navbar`, `Footer`, `SectionHeading`)
+- `src/pages/home/` — the home page and its page-specific sections (`Hero`, `Services`, `Testimonials`, `ServiceAreas`, `Gallery`, `Process`, `Contact`, `WhyUs`)
+- `src/data/business.js` — shared business info (phone, email, address)
+- `src/assets/` — images and icons
+
+## Deployment
+
+Handled by GitHub Actions in `.github/workflows/` — pushes to `development` deploy to the dev environment, pushes to `main` deploy to production (S3 + CloudFront).

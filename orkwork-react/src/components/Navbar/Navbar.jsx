@@ -18,9 +18,7 @@ export default function Navbar() {
 
   useEffect(() => {
     // Pronadji sve sekcije na koje nav linkovi pokazuju (preskace one koje ne postoje)
-    const sections = NAV_LINKS
-      .map((link) => document.querySelector(link.href))
-      .filter(Boolean);
+    const sections = NAV_LINKS.map((link) => document.querySelector(link.href)).filter(Boolean);
 
     if (sections.length === 0) return;
 
@@ -38,7 +36,7 @@ export default function Navbar() {
         // umesto da se aktivira cim se i pola sekcije pojavi na dnu ekrana.
         rootMargin: '-45% 0px -50% 0px',
         threshold: 0,
-      }
+      },
     );
 
     sections.forEach((section) => observer.observe(section));
