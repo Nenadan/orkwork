@@ -3,6 +3,7 @@ import gallery02 from '../../../../assets/photos/gallery-02.jpg';
 import gallery03 from '../../../../assets/photos/gallery-03.jpg';
 import gallery04 from '../../../../assets/photos/gallery-04.jpg';
 import gallery05 from '../../../../assets/photos/gallery-05.jpg';
+import './Gallery.css';
 
 const GALLERY_IMAGES = [
   { src: gallery01, alt: 'Okrečena dnevna soba' },
@@ -14,26 +15,23 @@ const GALLERY_IMAGES = [
 
 export default function Gallery() {
   return (
-    <section id="galerija" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between flex-wrap gap-4 mb-8">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-950">Galerija radova</h2>
-          <a
-            href="#galerija"
-            className="text-sm font-bold border border-gray-300 rounded-md px-5 py-2.5 hover:border-gray-900 transition-colors"
-          >
-            POGLEDAJTE VIŠE
-          </a>
+    <section id="galerija" className="gallery-section">
+      <div className="gallery-container section-container">
+        <div className="gallery-heading-row">
+          <div>
+            <p className="section-eyebrow">Naši radovi</p>
+            <h2 className="gallery-heading section-title">Galerija radova</h2>
+          </div>
+          <a href="#kontakt-informacije" className="gallery-link button button--outline">Zatražite ponudu</a>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div className="gallery-grid">
           {GALLERY_IMAGES.map((img) => (
-            <div key={img.src} className="rounded-xl overflow-hidden aspect-square bg-gray-100">
+            <div key={img.src} className="gallery-image-wrap">
               <img
                 src={img.src}
                 alt={img.alt}
                 loading="lazy"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
           ))}

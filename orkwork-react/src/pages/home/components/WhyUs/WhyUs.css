@@ -1,99 +1,169 @@
 .whyus-section {
-  background-color: var(--color-dark-alt);
-  padding: 5rem 1.5rem;
+  padding: var(--space-14) 0 var(--space-18);
+  background: var(--color-cream);
 }
 
-.whyus-container {
-  max-width: 80rem;
-  margin: 0 auto;
+.whyus-feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1.35rem;
 }
 
-/* ===== Naslov ===== */
-.whyus-header {
-  text-align: center;
-  margin-bottom: 3.5rem;
+.whyus-feature-image-wrap {
+  aspect-ratio: 1.38;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--color-photo-placeholder);
 }
 
-.whyus-heading {
-  color: var(--color-white);
-  font-size: 1.875rem;
-  font-weight: 800;
-}
-
-@media (min-width: 640px) {
-  .whyus-heading {
-    font-size: 2.25rem;
-  }
-}
-
-.whyus-underline {
+.whyus-feature-image-wrap img {
+  width: 100%;
+  height: 100%;
   display: block;
-  width: 3rem;
-  height: 0.25rem;
-  border-radius: 9999px;
-  margin: 1rem auto 0;
-  background-color: var(--color-accent);
+  object-fit: cover;
 }
 
-/* ===== Grid ===== */
+.whyus-feature-copy {
+  padding: 0.35rem 0;
+}
+
+.whyus-feature-description {
+  margin: 0.8rem 0 0;
+  color: var(--color-text-copy);
+  font-size: 0.9rem;
+  line-height: 1.68;
+}
+
 .whyus-grid {
   display: grid;
   grid-template-columns: 1fr;
+  margin-top: 2.25rem;
+  overflow: hidden;
 }
 
-@media (min-width: 640px) {
-  .whyus-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .whyus-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* ===== Stavka ===== */
 .whyus-item {
-  text-align: center;
-  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  align-items: center;
+  column-gap: 0.9rem;
+  padding: 1.1rem;
 }
 
-@media (min-width: 1024px) {
-  .whyus-item:not(:first-child) {
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-  }
+.whyus-item + .whyus-item {
+  border-top: 1px solid var(--color-border-soft);
 }
 
-/* ===== Ikonica u kružiću ===== */
 .whyus-icon-circle {
+  width: 2.65rem;
+  height: 2.65rem;
+  grid-row: span 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(242, 183, 5, 0.4);
-  margin: 0 auto 1.25rem;
+  border-radius: var(--radius-round);
+  color: var(--color-heading);
+  background: var(--color-accent-tint);
 }
 
-/* svg je "inline" po defaultu - block ga definitivno centrira */
 .whyus-icon-circle svg {
+  width: 1.3rem;
+  height: 1.3rem;
   display: block;
-  width: 1.5rem;
-  height: 1.5rem;
-  color: var(--color-accent);
 }
 
-/* ===== Tekst ===== */
 .whyus-title {
-  color: var(--color-white);
-  font-weight: 700;
+  margin: 0;
+  color: var(--color-heading);
+  font-size: 0.94rem;
+  font-weight: 750;
 }
 
 .whyus-desc {
-  margin-top: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--color-gray-400);
-  line-height: 1.625;
+  margin: 0.25rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 600px) {
+  .whyus-section {
+    padding-block: var(--space-18) 5.25rem;
+  }
+
+  .whyus-feature {
+    grid-template-columns: 0.9fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .whyus-feature-image-wrap {
+    aspect-ratio: 1.35;
+  }
+
+  .whyus-feature-description {
+    font-size: 0.95rem;
+  }
+
+  .whyus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: calc(var(--space-8) + var(--space-3));
+  }
+
+  .whyus-item {
+    padding: 1.25rem;
+  }
+
+  .whyus-item + .whyus-item {
+    border-top: 0;
+  }
+
+  .whyus-item:nth-child(even) {
+    border-left: 1px solid var(--color-border-soft);
+  }
+
+  .whyus-item:nth-child(n + 3) {
+    border-top: 1px solid var(--color-border-soft);
+  }
+}
+
+@media (min-width: 1024px) {
+  .whyus-feature {
+    grid-template-columns: 0.85fr 1fr;
+    gap: 2.75rem;
+  }
+
+  .whyus-feature-image-wrap {
+    max-height: 22rem;
+  }
+
+  .whyus-feature-copy {
+    max-width: 38rem;
+  }
+
+  .whyus-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .whyus-item {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    padding: 1.4rem;
+  }
+
+  .whyus-icon-circle {
+    grid-row: auto;
+    margin-bottom: 0.9rem;
+  }
+
+  .whyus-item:nth-child(even) {
+    border-left: 0;
+  }
+
+  .whyus-item + .whyus-item {
+    border-left: 1px solid var(--color-border-soft);
+  }
+
+  .whyus-item:nth-child(n + 3) {
+    border-top: 0;
+  }
 }

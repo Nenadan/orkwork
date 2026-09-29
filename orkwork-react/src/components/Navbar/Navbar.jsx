@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Phone, Menu, X, PaintRoller } from 'lucide-react';
+import { Phone, Menu, X, Paintbrush } from 'lucide-react';
 import { BUSINESS } from '../../data/business';
 import './Navbar.css';
 
@@ -44,19 +44,30 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!open) return undefined;
+
+    function closeOnEscape(event) {
+      if (event.key === 'Escape') setOpen(false);
+    }
+
+    document.addEventListener('keydown', closeOnEscape);
+    return () => document.removeEventListener('keydown', closeOnEscape);
+  }, [open]);
+
   return (
     <>
       <header className="navbar-header">
-        <div className="navbar-container">
+        <div className="navbar-container section-container section-container--header">
           <div className="navbar-row">
             {/* Logo */}
             <a href="#pocetna" className="navbar-logo">
-              <span className="navbar-logo-circle">
-                <PaintRoller strokeWidth={2.25} />
+              <span className="navbar-logo-mark">
+                <Paintbrush strokeWidth={2.25} />
               </span>
               <span className="navbar-wordmark">
-                <span className="navbar-wordmark-small">MOLERSKI RADOVI ORKWORK</span>
-                <span className="navbar-wordmark-bold">STARA PAZOVA</span>
+                <span className="navbar-wordmark-bold">ORKWORK</span>
+                <span className="navbar-wordmark-small">MOLERAJ – STARA PAZOVA</span>
               </span>
             </a>
 
@@ -74,7 +85,7 @@ export default function Navbar() {
             </nav>
 
             {/* Phone CTA */}
-            <a href={BUSINESS.phoneHref} className="navbar-phone-cta">
+            <a href={BUSINESS.phoneHref} className="navbar-phone-cta button button--dark">
               <Phone strokeWidth={2.25} />
               {BUSINESS.phone}
             </a>
@@ -83,7 +94,8 @@ export default function Navbar() {
             <button
               onClick={() => setOpen((v) => !v)}
               className="navbar-mobile-toggle"
-              aria-label="Otvori meni"
+              aria-label={open ? 'Zatvori meni' : 'Otvori meni'}
+              aria-expanded={open}
             >
               {open ? <X /> : <Menu />}
             </button>
@@ -92,29 +104,35 @@ export default function Navbar() {
       </header>
 
       {/* Mobile menu - namerno VAN <header>, da njegov backdrop-filter ne blokira ovaj */}
-      {open && (
-        <div className="navbar-mobile-menu">
-          <nav className="navbar-mobile-nav">
-            {NAV_LINKS.map((link) => {
-              const isActive = activeId === link.href.slice(1);
-              return (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className={`navbar-mobile-link${isActive ? ' active' : ''}`}
-                >
-                  {link.label}
-                </a>
-              );
-            })}
-            <a href={BUSINESS.phoneHref} className="navbar-mobile-cta">
-              <Phone />
-              {BUSINESS.phone}
-            </a>
-          </nav>
-        </div>
-      )}
+      <div
+        className={`navbar-mobile-menu${open ? ' is-open' : ''}`}
+        aria-hidden={!open}
+      >
+        <nav className="navbar-mobile-nav" aria-label="Navigacija za mobilne uređaje">
+          {NAV_LINKS.map((link) => {
+            const isActive = activeId === link.href.slice(1);
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={`navbar-mobile-link${isActive ? ' active' : ''}`}
+                tabIndex={open ? 0 : -1}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+          <a
+            href={BUSINESS.phoneHref}
+          className="navbar-mobile-cta button button--primary"
+            tabIndex={open ? 0 : -1}
+          >
+            <Phone />
+            {BUSINESS.phone}
+          </a>
+        </nav>
+      </div>
     </>
   );
 }

@@ -7,7 +7,7 @@ const AREAS = ['Stara Pazova', 'Beograd', 'Novi Sad', 'Inđija', 'Ruma', 'Sremsk
 export default function ServiceAreas() {
   return (
     <section id="lokacije" className="areas-section">
-      <div className="areas-container">
+      <div className="areas-container section-container">
         <SectionHeading
           prefix="areas"
           heading="Mesta koja pokrivamo"
@@ -19,7 +19,7 @@ export default function ServiceAreas() {
           <div className="areas-list-col">
             <ul className="areas-list">
               {AREAS.map((area) => (
-                <li key={area} className="area-item">
+                <li key={area} className="area-item surface-card">
                   <span className="area-pin">
                     <MapPin strokeWidth={2} />
                   </span>

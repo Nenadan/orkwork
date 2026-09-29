@@ -1,5 +1,5 @@
-import { PaintRoller, Layers, Home, Sparkles, SprayCan } from 'lucide-react';
-import SectionHeading from '../../../../components/SectionHeading/SectionHeading';
+import { ArrowRight, PaintRoller, Layers, Home, Sparkles, SprayCan } from 'lucide-react';
+import servicesImg from '../../../../assets/hero/hero_2.png';
 import './Services.css';
 
 const SERVICES = [
@@ -33,16 +33,27 @@ const SERVICES = [
 export default function Services() {
   return (
     <section id="usluge" className="services-section">
-      <div className="services-container">
-        <SectionHeading
-          prefix="services"
-          heading="Naše usluge"
-          subtitle="Nudimo kompletne molerske usluge za svaki prostor."
-        />
+      <div className="services-container section-container">
+        <div className="services-feature">
+          <div className="services-feature-copy">
+            <p className="section-eyebrow">Naše usluge</p>
+            <h2 className="services-feature-heading section-title section-title--feature">Šta radimo?</h2>
+            <p className="services-feature-description">
+              Nudimo kompletne molerske usluge za stanove, kuće, poslovne prostore i objekte u
+              Staroj Pazovi i okolini.
+            </p>
+            <a className="services-feature-link button button--dark" href="#services-grid">
+              Pogledajte sve usluge <ArrowRight aria-hidden="true" />
+            </a>
+          </div>
+          <div className="services-feature-image-wrap">
+            <img src={servicesImg} alt="Valjak i kanta pripremljeni za molerske radove" loading="lazy" />
+          </div>
+        </div>
 
-        <div className="services-grid">
+        <div className="services-grid" id="services-grid">
           {SERVICES.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="service-card">
+              <div key={title} className="service-card surface-card">
               <span className="service-icon-circle">
                 <Icon strokeWidth={1.75} />
               </span>

@@ -32,7 +32,7 @@ const TESTIMONIALS = [
 export default function Testimonials() {
   return (
     <section className="testimonials-section">
-      <div className="testimonials-container">
+      <div className="testimonials-container section-container">
         <SectionHeading
           prefix="testimonials"
           heading="Šta kažu klijenti"
@@ -41,7 +41,7 @@ export default function Testimonials() {
 
         <div className="testimonials-grid">
           {TESTIMONIALS.map(({ rating, quote, name, location, initials }) => (
-            <div key={name} className="testimonial-card">
+            <div key={name} className="testimonial-card surface-card">
               <div className="testimonial-stars">
                 {Array.from({ length: rating }).map((_, i) => (
                   <Star key={i} fill="currentColor" strokeWidth={0} />

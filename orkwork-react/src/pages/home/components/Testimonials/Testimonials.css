@@ -1,106 +1,90 @@
 .testimonials-section {
-  background-color: var(--color-white);
-  padding: 5rem 1.5rem;
+  padding: var(--section-space) 0;
+  background: var(--color-white);
 }
 
-.testimonials-container {
-  max-width: 80rem;
-  margin: 0 auto;
-}
-
-/* ===== Naslov ===== */
 .testimonials-header {
-  margin-bottom: 3rem;
-  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.testimonials-heading {
-  font-size: 1.875rem;
-  font-weight: 800;
-  color: var(--color-heading);
-}
-
-@media (min-width: 640px) {
-  .testimonials-heading {
-    font-size: 2.25rem;
-  }
-}
-
-.testimonials-subtitle {
-  margin-top: 0.75rem;
-  color: var(--color-muted);
-}
-
-/* ===== Grid kartica ===== */
 .testimonials-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  gap: 0.85rem;
 }
 
 .testimonial-card {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
-/* ===== Zvezdice ===== */
 .testimonial-stars {
   display: flex;
-  gap: 0.125rem;
-  color: var(--color-accent);
-  margin-bottom: 0.75rem;
+  gap: 0.15rem;
+  margin-bottom: 0.65rem;
+  color: var(--color-star);
 }
 
 .testimonial-stars svg {
-  display: block;
-  width: 1rem;
-  height: 1rem;
+  width: 0.95rem;
+  height: 0.95rem;
 }
 
-/* ===== Citat ===== */
 .testimonial-quote {
-  font-size: 0.9375rem;
-  color: var(--color-gray-700);
-  line-height: 1.6;
+  margin: 0;
+  color: var(--color-text-copy);
+  font-size: 0.9rem;
+  line-height: 1.65;
 }
 
-/* ===== Autor ===== */
 .testimonial-author {
-  margin-top: 1.25rem;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
+  margin-top: 1.1rem;
 }
 
 .testimonial-avatar {
-  display: flex;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 9999px;
-  background-color: rgba(242, 183, 5, 0.18);
-  color: var(--color-accent-dark);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  flex-shrink: 0;
+  flex: 0 0 auto;
+  border-radius: var(--radius-round);
+  color: var(--color-heading);
+  background: var(--color-accent-soft);
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.testimonial-name,
+.testimonial-location {
+  margin: 0;
 }
 
 .testimonial-name {
-  font-weight: 700;
   color: var(--color-heading);
-  font-size: 0.875rem;
+  font-size: 0.82rem;
+  font-weight: 750;
 }
 
 .testimonial-location {
-  font-size: 0.8125rem;
+  margin-top: 0.15rem;
   color: var(--color-muted);
+  font-size: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .testimonials-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .testimonial-card {
+    padding: 1.4rem;
+  }
 }

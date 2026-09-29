@@ -1,4 +1,4 @@
-import { PaintRoller, MapPin, Phone, Mail } from 'lucide-react';
+import { Paintbrush, MapPin, Phone, Mail } from 'lucide-react';
 import { BUSINESS } from '../../data/business';
 import './Footer.css';
 
@@ -38,29 +38,35 @@ function InstagramIcon(props) {
   );
 }
 
-const QUICK_LINKS = ['Početna', 'Usluge', 'Galerija', 'O nama', 'Kontakt'];
+const QUICK_LINKS = [
+  { label: 'Početna', href: '#pocetna' },
+  { label: 'Usluge', href: '#usluge' },
+  { label: 'Galerija', href: '#galerija' },
+  { label: 'O nama', href: '#o-nama' },
+  { label: 'Kontakt', href: '#kontakt-informacije' },
+];
 const SERVICES = [
-  'Molerski radovi',
-  'Gletovanje',
-  'Fasadni radovi',
-  'Dekorativne tehnike',
-  'Dodatne usluge',
+  { label: 'Molerski radovi', href: '#services-grid' },
+  { label: 'Gletovanje', href: '#services-grid' },
+  { label: 'Fasadni radovi', href: '#services-grid' },
+  { label: 'Dekorativne tehnike', href: '#services-grid' },
+  { label: 'Dodatne usluge', href: '#services-grid' },
 ];
 
 export default function Footer() {
   return (
     <footer className="footer-section">
-      <div className="footer-container">
+      <div className="footer-container section-container">
         <div className="footer-grid">
           {/* Brand */}
           <div>
             <div className="footer-brand-header">
               <span className="footer-logo-circle">
-                <PaintRoller strokeWidth={2.25} />
+                <Paintbrush strokeWidth={2.25} />
               </span>
               <span className="footer-wordmark">
-                <span className="footer-wordmark-small">MOLERSKI RADOVI ORKWORK</span>
-                <span className="footer-wordmark-bold footer-city-name">STARA PAZOVA</span>
+                <span className="footer-wordmark-bold">ORKWORK</span>
+                <span className="footer-wordmark-small">MOLERAJ – STARA PAZOVA</span>
               </span>
             </div>
             <p className="footer-desc">
@@ -81,10 +87,10 @@ export default function Footer() {
           <div>
             <h4 className="footer-heading">Brzi linkovi</h4>
             <ul className="footer-list">
-              {QUICK_LINKS.map((l) => (
-                <li key={l}>
-                  <a href="#" className="footer-link">
-                    {l}
+              {QUICK_LINKS.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="footer-link">
+                    {label}
                   </a>
                 </li>
               ))}
@@ -95,10 +101,10 @@ export default function Footer() {
           <div>
             <h4 className="footer-heading">Usluge</h4>
             <ul className="footer-list">
-              {SERVICES.map((s) => (
-                <li key={s}>
-                  <a href="#" className="footer-link">
-                    {s}
+              {SERVICES.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="footer-link">
+                    {label}
                   </a>
                 </li>
               ))}

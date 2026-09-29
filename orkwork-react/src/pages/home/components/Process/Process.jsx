@@ -28,7 +28,7 @@ const STEPS = [
 export default function Process() {
   return (
     <section id="proces" className="process-section">
-      <div className="process-container">
+      <div className="process-container section-container">
         <SectionHeading
           prefix="process"
           heading="Kako sarađujemo?"
@@ -40,7 +40,7 @@ export default function Process() {
           <div className="process-line" aria-hidden="true" />
 
           {STEPS.map(({ icon: Icon, title, desc }, i) => (
-            <div key={title} className="process-step">
+            <div key={title} className="process-step surface-card">
               <span className="process-icon-circle">
                 <Icon className="process-icon" strokeWidth={1.75} />
               </span>

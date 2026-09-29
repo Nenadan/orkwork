@@ -1,5 +1,5 @@
 import { Award, ShieldCheck, HeartHandshake, Tag } from 'lucide-react';
-import SectionHeading from '../../../../components/SectionHeading/SectionHeading';
+import whyUsImg from '../../../../assets/hero/hero_3.png';
 import './WhyUs.css';
 
 const REASONS = [
@@ -28,10 +28,23 @@ const REASONS = [
 export default function WhyUs() {
   return (
     <section className="whyus-section" id="o-nama">
-      <div className="whyus-container">
-        <SectionHeading prefix="whyus" heading="Zašto baš mi?" underline />
+      <div className="whyus-container section-container">
+        <div className="whyus-feature">
+          <div className="whyus-feature-image-wrap">
+            <img src={whyUsImg} alt="Ruka molera nanosi plavu boju valjkom" loading="lazy" />
+          </div>
+          <div className="whyus-feature-copy">
+            <p className="section-eyebrow">Zašto Orkwork?</p>
+            <h2 className="whyus-feature-heading section-title section-title--feature">Iskustvo i poverenje</h2>
+            <p className="whyus-feature-description">
+              Orkwork je lokalna firma iz Stare Pazove koja se bavi molerajem sa dugogodišnjim
+              iskustvom. Naš cilj je da svaki prostor koji uređujemo dobije nov, svež izgled i da
+              zadovoljstvo klijenata bude na prvom mestu.
+            </p>
+          </div>
+        </div>
 
-        <div className="whyus-grid">
+        <div className="whyus-grid surface-card">
           {REASONS.map(({ icon: Icon, title, desc }) => (
             <div key={title} className="whyus-item">
               <span className="whyus-icon-circle">
