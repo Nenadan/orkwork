@@ -33,7 +33,7 @@
 .hero-copy-wrap {
   --page-gutter: 1.25rem;
   margin-inline: auto;
-  padding-block: 4.5rem;
+  padding-block: var(--space-18);
 }
 
 .hero-copy {

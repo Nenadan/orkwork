@@ -120,7 +120,7 @@
 
   .services-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    gap: var(--space-4);
     margin-top: var(--space-12);
   }
 
@@ -145,6 +145,6 @@
 
   .services-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 1rem;
+    gap: var(--space-4);
   }
 }
