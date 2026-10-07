@@ -62,20 +62,10 @@
 
 .contact-call-button svg,
 .contact-message-link svg,
-.contact-viber-button svg,
 .contact-whatsapp-button svg {
   flex: 0 0 auto;
   width: 1rem;
   height: 1rem;
-}
-
-.contact-viber-button {
-  color: var(--color-white);
-  background: #5b47d0;
-}
-
-.contact-viber-button:hover {
-  background: #4b38b5;
 }
 
 .contact-whatsapp-button {
@@ -87,13 +77,11 @@
   background: #1ebd5a;
 }
 
-.contact-viber-button:focus-visible,
 .contact-whatsapp-button:focus-visible {
   outline: 3px solid var(--color-white);
   outline-offset: 3px;
 }
 
-.contact-viber-button svg,
 .contact-whatsapp-button svg {
   width: 1.25rem;
   height: 1.25rem;
@@ -210,7 +198,7 @@ a.contact-card:hover {
   }
 
   .contact-callout-actions {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.75rem;
   }
 
@@ -230,7 +218,7 @@ a.contact-card:hover {
 
   .contact-callout-actions {
     grid-column: auto;
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns: repeat(3, max-content);
     gap: 0.5rem;
   }
 }
