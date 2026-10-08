@@ -30,14 +30,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-lg);
-  color: var(--color-heading);
-  background: var(--color-accent);
 }
 
-.navbar-logo-mark svg {
-  width: 1.45rem;
-  height: 1.45rem;
+.navbar-logo-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .navbar-wordmark {

@@ -1,5 +1,6 @@
-import { Paintbrush, MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 import { BUSINESS } from '../../data/business';
+import brandIcon from '../../assets/icons/orkwork_logo_2.png';
 import './Footer.css';
 
 // lucide-react v1.0+ je uklonio brend ikonice (Facebook, Instagram...),
@@ -62,7 +63,7 @@ export default function Footer() {
           <div>
             <div className="footer-brand-header">
               <span className="footer-logo-circle">
-                <Paintbrush strokeWidth={2.25} />
+                <img src={brandIcon} alt="" width="1536" height="1024" />
               </span>
               <span className="footer-wordmark">
                 <span className="footer-wordmark-bold">ORKWORK</span>

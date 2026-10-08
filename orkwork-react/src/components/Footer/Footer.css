@@ -31,14 +31,13 @@
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  border-radius: var(--radius-card);
-  color: var(--color-heading);
-  background: var(--color-accent);
 }
 
-.footer-logo-circle svg {
-  width: 1.45rem;
-  height: 1.45rem;
+.footer-logo-circle img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .footer-wordmark {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Phone, Menu, X, Paintbrush } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
 import { BUSINESS } from '../../data/business';
+import brandIcon from '../../assets/icons/orkwork_logo_1.png';
 import './Navbar.css';
 
 const NAV_LINKS = [
@@ -63,7 +64,7 @@ export default function Navbar() {
             {/* Logo */}
             <a href="#pocetna" className="navbar-logo">
               <span className="navbar-logo-mark">
-                <Paintbrush strokeWidth={2.25} />
+                <img src={brandIcon} alt="" width="1536" height="1024" />
               </span>
               <span className="navbar-wordmark">
                 <span className="navbar-wordmark-bold">ORKWORK</span>
