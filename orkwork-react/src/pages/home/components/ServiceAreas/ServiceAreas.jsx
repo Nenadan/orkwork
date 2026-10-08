@@ -38,8 +38,8 @@ export default function ServiceAreas() {
           <div className="areas-map-col">
             <div className="areas-map-wrap">
               <iframe
-                title="Sedište - Stara Pazova"
-                src="https://maps.google.com/maps?q=Stara%20Pazova%2C%20Srbija&z=11&output=embed"
+                title="Sedište - Orkwork, Stara Pazova"
+                src="https://maps.google.com/maps?q=Orkwork%2C%20Stara%20Pazova&ll=44.9957516%2C20.0575254&z=12&output=embed"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="areas-map-iframe"
@@ -47,7 +47,7 @@ export default function ServiceAreas() {
             </div>
             <p className="areas-map-caption">
               <MapPin strokeWidth={2} />
-              Sedište: Stara Pazova
+              Sedište: Orkwork, Stara Pazova
             </p>
           </div>
         </div>
