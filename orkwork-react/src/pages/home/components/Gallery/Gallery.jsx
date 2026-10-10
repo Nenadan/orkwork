@@ -1,146 +1,149 @@
-import { useLayoutEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
-import posao01 from '../../../../assets/posao/posao_1.jpg';
-import posao02 from '../../../../assets/posao/posao_2.jpg';
-import posao03 from '../../../../assets/posao/posao_3.jpg';
-import posao04 from '../../../../assets/posao/posao_4.jpg';
-import posao05 from '../../../../assets/posao/posao_5.jpg';
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import galleryData from '../../../../data/gallery.json';
 import './Gallery.css';
 
-const GALLERY_IMAGES = [
-  { src: posao01, alt: 'Oslikani motiv Srbije sa zastavom na belom zidu' },
-  { src: posao02, alt: 'Dečji zidni mural sa medvedićem i pčelama' },
-  { src: posao03, alt: 'Dekorativni braon zid sa teksturom u dnevnoj sobi' },
-  { src: posao04, alt: 'Sveže okrečen beli zid i plafon u sobi' },
-  { src: posao05, alt: 'Dečji mural sa jelenčetom i šumskim životinjama' },
-];
+const galleryAssets = import.meta.glob('../../../../assets/posao/**/*.{jpg,jpeg,png}', {
+  eager: true,
+  import: 'default',
+});
 
-export default function Gallery() {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const dialogRef = useRef(null);
-  const closeButtonRef = useRef(null);
-  const isOpen = activeIndex !== null;
-  const activeImage = isOpen ? GALLERY_IMAGES[activeIndex] : null;
+function getImageSource(asset) {
+  return galleryAssets[`../../../../assets/posao/${asset}`];
+}
 
-  useLayoutEffect(() => {
-    const dialog = dialogRef.current;
-    if (!isOpen || !dialog) return;
+function GalleryCard({ item }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [leavingIndex, setLeavingIndex] = useState(null);
+  const [direction, setDirection] = useState('next');
+  const imageCount = item.images.length;
+  const activeImage = item.images[activeIndex];
 
-    const opener = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    dialog.showModal();
-    document.body.style.overflow = 'hidden';
-    closeButtonRef.current?.focus();
+  function showImage(index, nextDirection) {
+    if (index === activeIndex) return;
 
-    return () => {
-      if (dialog.open) dialog.close();
-      document.body.style.overflow = previousOverflow;
-      if (opener instanceof HTMLElement && opener.isConnected) opener.focus();
-    };
-  }, [isOpen]);
+    setLeavingIndex(activeIndex);
+    setDirection(nextDirection);
+    setActiveIndex(index);
+  }
 
   function showPrevious() {
-    setActiveIndex((current) => (current === 0 ? GALLERY_IMAGES.length - 1 : current - 1));
+    showImage(activeIndex === 0 ? imageCount - 1 : activeIndex - 1, 'previous');
   }
 
   function showNext() {
-    setActiveIndex((current) => (current === GALLERY_IMAGES.length - 1 ? 0 : current + 1));
+    showImage(activeIndex === imageCount - 1 ? 0 : activeIndex + 1, 'next');
   }
 
   return (
-    <section id="galerija" className="gallery-section">
-      <div className="gallery-container section-container">
-        <div className="gallery-heading-row">
-          <div>
-            <p className="section-eyebrow">Naši radovi</p>
-            <h2 className="gallery-heading section-title">Galerija radova</h2>
-          </div>
-          <a href="#kontakt-informacije" className="gallery-link button button--outline">Zatražite ponudu</a>
-        </div>
+    <article
+      className="gallery-card surface-card"
+      onKeyDown={(event) => {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          showPrevious();
+        } else if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          showNext();
+        }
+      }}
+    >
+      <div className="gallery-carousel">
+        {leavingIndex !== null && (
+          <img
+            className={`gallery-carousel-image is-leaving-${direction}`}
+            src={getImageSource(item.images[leavingIndex].asset)}
+            alt=""
+            aria-hidden="true"
+          />
+        )}
+        <img
+          key={activeImage.asset}
+          className={`gallery-carousel-image is-entering-${direction}`}
+          src={getImageSource(activeImage.asset)}
+          alt={activeImage.alt}
+          loading="lazy"
+          onAnimationEnd={() => setLeavingIndex(null)}
+        />
 
-        <div className="gallery-grid">
-          {GALLERY_IMAGES.map((img, index) => (
-            <button
-              key={img.src}
-              type="button"
-              className="gallery-image-wrap"
-              aria-label={`Uvećaj fotografiju ${index + 1} od ${GALLERY_IMAGES.length}`}
-              onClick={(event) => {
-                event.currentTarget.focus();
-                setActiveIndex(index);
-              }}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                loading="lazy"
-              />
-              <span className="gallery-image-action" aria-hidden="true">
-                <Maximize2 size={18} />
-              </span>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <dialog
-        ref={dialogRef}
-        className="gallery-lightbox"
-        aria-label="Pregled fotografija radova"
-        onClick={(event) => {
-          if (event.target === dialogRef.current) setActiveIndex(null);
-        }}
-        onKeyDown={(event) => {
-          if (event.key === 'ArrowLeft') {
-            event.preventDefault();
-            showPrevious();
-          } else if (event.key === 'ArrowRight') {
-            event.preventDefault();
-            showNext();
-          }
-        }}
-        onClose={() => setActiveIndex(null)}
-      >
-        {activeImage && (
-          <div
-            className="gallery-lightbox-content"
-            onClick={(event) => {
-              if (event.target === event.currentTarget) setActiveIndex(null);
-            }}
-          >
-            <img className="gallery-lightbox-image" src={activeImage.src} alt={activeImage.alt} />
-
-            <button
-              ref={closeButtonRef}
-              type="button"
-              className="gallery-lightbox-control gallery-lightbox-close"
-              aria-label="Zatvori fotografiju"
-              onClick={() => setActiveIndex(null)}
-            >
-              <X size={22} aria-hidden="true" />
-            </button>
+        {imageCount > 1 && (
+          <>
             <button
               type="button"
-              className="gallery-lightbox-control gallery-lightbox-previous"
-              aria-label="Prethodna fotografija"
+              className="gallery-carousel-control gallery-carousel-previous"
+              aria-label={`Prethodna fotografija: ${item.name}`}
               onClick={showPrevious}
             >
-              <ChevronLeft size={24} aria-hidden="true" />
+              <ChevronLeft aria-hidden="true" />
             </button>
             <button
               type="button"
-              className="gallery-lightbox-control gallery-lightbox-next"
-              aria-label="Sledeća fotografija"
+              className="gallery-carousel-control gallery-carousel-next"
+              aria-label={`Sledeća fotografija: ${item.name}`}
               onClick={showNext}
             >
-              <ChevronRight size={24} aria-hidden="true" />
+              <ChevronRight aria-hidden="true" />
             </button>
-            <p className="gallery-lightbox-count" aria-live="polite">
-              {activeIndex + 1} / {GALLERY_IMAGES.length}
-            </p>
-          </div>
+            <div className="gallery-carousel-dots" aria-label={`Fotografije: ${item.name}`}>
+              {item.images.map((image, index) => (
+                <button
+                  key={image.asset}
+                  type="button"
+                  className={`gallery-carousel-dot${index === activeIndex ? ' is-active' : ''}`}
+                  aria-label={`Prikaži fotografiju ${index + 1} od ${imageCount}: ${item.name}`}
+                  aria-current={index === activeIndex ? 'true' : undefined}
+                  onClick={() => showImage(index, index > activeIndex ? 'next' : 'previous')}
+                />
+              ))}
+            </div>
+          </>
         )}
-      </dialog>
+      </div>
+      <div className="gallery-card-copy">
+        <h3 className="gallery-card-title">{item.name}</h3>
+        <p className="gallery-card-description">{item.description}</p>
+      </div>
+    </article>
+  );
+}
+
+function GalleryGroup({ group }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const hasMoreItems = group.items.length > 3;
+  const visibleItems = isExpanded ? group.items : group.items.slice(0, 3);
+
+  return (
+    <div className="gallery-group">
+      <div className="gallery-group-header">
+        <p className="section-eyebrow">{group.eyebrow}</p>
+        <h2 className="gallery-heading section-title">{group.title}</h2>
+        <p className="gallery-description section-subtitle">{group.description}</p>
+      </div>
+      <div className="gallery-grid">
+        {visibleItems.map((item) => (
+          <GalleryCard key={item.name} item={item} />
+        ))}
+      </div>
+      {hasMoreItems && (
+        <button
+          type="button"
+          className="gallery-show-more button button--outline"
+          onClick={() => setIsExpanded((current) => !current)}
+        >
+          {isExpanded ? 'Prikaži manje' : 'Prikaži više'}
+        </button>
+      )}
+    </div>
+  );
+}
+
+export default function Gallery() {
+  return (
+    <section id="galerija" className="gallery-section">
+      <div className="gallery-container section-container">
+        <GalleryGroup group={galleryData.projects} />
+        <GalleryGroup group={galleryData.services} />
+      </div>
     </section>
   );
 }

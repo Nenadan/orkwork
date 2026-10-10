@@ -1,0 +1,43 @@
+{
+  "projects": {
+    "eyebrow": "Naši radovi",
+    "title": "Projekti",
+    "description": "Pogledajte veće projekte na kojima smo radili, od pripreme do završnih detalja.",
+    "items": [
+      { "name": "Gold Carp Lake", "description": "Dekorativni radovi · Enterijer", "images": [
+        { "asset": "projekti/gold-carp-lake/gold-carp-lake-2.jpg", "alt": "Detalj enterijera nakon molerskih radova u objektu Gold Carp Lake" },
+        { "asset": "projekti/gold-carp-lake/gold-carp-lake-1.jpg", "alt": "Završeni molerski radovi u objektu Gold Carp Lake" },
+        { "asset": "projekti/gold-carp-lake/gold-carp-lake-3.jpg", "alt": "Prostor objekta Gold Carp Lake nakon završetka radova" }
+      ] },
+      { "name": "Sunnyville, Višnjička Banja", "description": "Molerski radovi · Stambeni kompleks", "images": [
+        { "asset": "projekti/sunnyville/sunnyvile-visnjicka-banja-3.jpg", "alt": "Uređen prostor kompleksa Sunnyville u Višnjičkoj Banji" },
+        { "asset": "projekti/sunnyville/sunnyvile-visnjicka-banja-4.jpg", "alt": "Završna obrada enterijera u kompleksu Sunnyville" },
+        { "asset": "projekti/sunnyville/sunnyvile-visnjicka-banja-1.jpg", "alt": "Završeni radovi u kompleksu Sunnyville u Višnjičkoj Banji" },
+        { "asset": "projekti/sunnyville/sunnyvile-visnjicka-banja-2.jpg", "alt": "Detalj enterijera kompleksa Sunnyville nakon molerskih radova" }
+      ] }
+    ]
+  },
+  "services": {
+    "eyebrow": "Šta pružamo",
+    "title": "Usluge",
+    "description": "Izdvajamo deo usluga koje pružamo i rezultate koje možete očekivati.",
+    "items": [
+      { "name": "Dekorativne tehnike", "description": "Dekorativni radovi · Enterijer", "images": [
+        { "asset": "usluge/dekorativne-tehinke/dekorativne-tehnike-1.jpg", "alt": "Primer dekorativne tehnike na zidu" },
+        { "asset": "usluge/dekorativne-tehinke/dekorativne-tehnike-2.jpg", "alt": "Detalj dekorativne obrade zida" },
+        { "asset": "usluge/dekorativne-tehinke/dekorativne-tehnike-3.jpg", "alt": "Završena dekorativna tehnika u enterijeru" }
+      ] },
+      { "name": "Krečenje", "description": "Stanovi, kuće i poslovni prostori", "images": [
+        { "asset": "usluge/krecenje/krecenje-1.jpg", "alt": "Sveže okrečen enterijer" },
+        { "asset": "usluge/krecenje/krecenje-2.jpg", "alt": "Zid nakon profesionalnog krečenja" },
+        { "asset": "usluge/krecenje/krecenje-3.jpg", "alt": "Završeni molerski radovi u prostoru" },
+        { "asset": "usluge/krecenje/krecenje-4.jpg", "alt": "Detalj sveže okrečenog prostora" }
+      ] },
+      { "name": "Imitacija stene", "description": "Dekorativni radovi · Enterijer", "images": [
+        { "asset": "usluge/imitacija-stene/imitacija-stene-1.jpg", "alt": "Imitacija kamene stene u enterijeru" },
+        { "asset": "usluge/imitacija-stene/imitacija-stene-2.jpg", "alt": "Detalj dekorativne imitacije stene" },
+        { "asset": "usluge/imitacija-stene/imitacija-stene-3.jpg", "alt": "Završena imitacija kamene stene na zidu" }
+      ] }
+    ]
+  }
+}
